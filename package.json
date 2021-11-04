@@ -1,0 +1,50 @@
+{
+  "name": "timestamp-microservice-fastify-ts",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "Jake Klassen",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "clean": "shx rm -rf dist",
+    "prebuild": "yarn run clean",
+    "build": "node --loader ts-node/esm src/build.ts",
+    "watch": "tsc --watch",
+    "start": "PORT=$(get-port) nodemon",
+    "pretest": "yarn run build",
+    "test": "uvu -r tsm -i dist",
+    "prod": "node ./dist"
+  },
+  "imports": {
+    "#app/*": [
+      "./dist/*"
+    ]
+  },
+  "dependencies": {
+    "ajv": "^6.12.6",
+    "comment-json": "^4.1.0",
+    "fastify": "^3.22.1",
+    "reflect-metadata": "^0.1.13",
+    "typescript": "^4.4.4"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.4",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "clipboardy": "^3.0.0",
+    "esbuild": "^0.13.12",
+    "eslint": "^8.1.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "expect": "^27.3.1",
+    "get-port": "^6.0.0",
+    "get-port-cli": "^3.0.0",
+    "nodemon": "^2.0.5",
+    "prettier": "^2.0.5",
+    "shx": "^0.3.2",
+    "tiny-glob": "^0.2.9",
+    "ts-node": "^10.4.0",
+    "tsm": "^2.1.4",
+    "uvu": "^0.5.2"
+  }
+}

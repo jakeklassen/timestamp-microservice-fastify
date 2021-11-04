@@ -1,3 +1,8 @@
-# TypeScript Base
+# Timestamp Microservice
 
-Base repo for myself, nothing to see here.
+FreeCodeCamp Timestamp microservice using:
+
+- typescript
+- esbuild
+- uvu
+- fastify

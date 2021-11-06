@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "shx rm -rf dist",
     "prebuild": "yarn run clean",
-    "build": "node --loader ts-node/esm src/build.ts",
+    "build": "node --loader tsm src/build.ts",
     "watch": "tsc --watch",
     "start": "PORT=$(get-port) nodemon",
     "pretest": "yarn run build",
@@ -43,7 +43,6 @@
     "prettier": "^2.0.5",
     "shx": "^0.3.2",
     "tiny-glob": "^0.2.9",
-    "ts-node": "^10.4.0",
     "tsm": "^2.1.4",
     "uvu": "^0.5.2"
   }
